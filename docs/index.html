@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Purity and Protection — Media Literacy Toolkit</title>
+  <title>"Evil" West — Media Literacy Toolkit</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
@@ -85,7 +85,6 @@
       overflow: hidden;
       background: var(--bg);
     }
-    /* subtle CSS grain via SVG filter */
     #hero::before {
       content: '';
       position: absolute;
@@ -107,9 +106,9 @@
     }
     .hero-title {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(50px, 9vw, 92px);
+      font-size: clamp(36px, 6.5vw, 74px);
       font-weight: 700;
-      line-height: 1.04;
+      line-height: 1.08;
       color: var(--dark);
       letter-spacing: -0.02em;
       margin-bottom: 28px;
@@ -126,6 +125,31 @@
     /* ════════════════════════════
        INTRO
     ════════════════════════════ */
+    .definition-box {
+      border-left: 3px solid var(--accent);
+      padding: 22px 26px;
+      background: #fff;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 36px;
+      max-width: 700px;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+    }
+    .definition-text {
+      font-size: 17px;
+      line-height: 1.72;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+    .definition-text strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .definition-example {
+      font-size: 14px;
+      color: var(--muted);
+      font-style: italic;
+    }
     .intro-text {
       font-size: 18px;
       line-height: 1.78;
@@ -241,6 +265,7 @@
     .panel-lbl { font-size: 13px; color: var(--muted); }
 
     .panel-body { font-size: 16px; line-height: 1.78; color: var(--dark); margin-bottom: 20px; }
+    .panel-body-quote { font-size: 16px; line-height: 1.78; color: var(--dark); font-style: italic; }
 
     .hl {
       background: rgba(163,45,45,0.1);
@@ -299,6 +324,33 @@
       margin-bottom: 6px;
     }
     .tooltip-explanation { font-size: 15px; color: var(--dark); line-height: 1.62; }
+
+    /* Speech layout */
+    .speech-container { display: none; margin-bottom: 24px; }
+    .speech-container.active { display: block; }
+    .speech-pair { margin-bottom: 28px; }
+    .speech-pair:last-child { margin-bottom: 0; }
+    .speech-pair .panels { margin-bottom: 12px; }
+    .speech-source {
+      font-size: 13px;
+      color: var(--muted);
+      padding-left: 4px;
+    }
+    .speech-source a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .speech-source a:hover { text-decoration: underline; }
+    .speech-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
 
     /* Nav */
     .nav-row { display: flex; align-items: center; justify-content: space-between; }
@@ -379,7 +431,7 @@
       .container { padding: 0 20px; }
       .stat-cards, .questions-grid, .techniques-grid { grid-template-columns: 1fr; gap: 14px; }
       .panels { grid-template-columns: 1fr; }
-      .hero-title { font-size: clamp(40px, 12vw, 64px); }
+      .hero-title { font-size: clamp(32px, 10vw, 56px); }
       #questions .section-title { margin-bottom: 32px; }
     }
     @media (max-width: 480px) {
@@ -395,7 +447,7 @@
 <section id="hero">
   <div class="hero-inner">
     <span class="hero-label fi" style="transition-delay:0s">Educational Project — AUCA 2026</span>
-    <h1 class="hero-title fi" style="transition-delay:0.12s">Purity and<br>Protection</h1>
+    <h1 class="hero-title fi" style="transition-delay:0.12s">"Evil" West —<br>threat for Iran<br>true or false?</h1>
     <p class="hero-sub fi" style="transition-delay:0.24s">A media literacy toolkit for recognizing propaganda techniques</p>
   </div>
 </section>
@@ -407,6 +459,10 @@
 ═══════════════════════════════════════ -->
 <section id="intro">
   <div class="container">
+    <div class="definition-box fi">
+      <p class="definition-text"><strong>Propaganda</strong> — is a deliberate form of communication that uses selective, biased, or misleading information to shape people's perceptions and behavior in ways that primarily serve the interests of the communicator, often by appealing to emotion rather than informed, rational judgment.</p>
+      <p class="definition-example">Example: state leader, authorities, media broadcast channels etc</p>
+    </div>
     <p class="intro-text fi">
       <em>Gharbzadegi</em> — or "Westoxification" — is a concept used in Iranian political discourse to frame Western cultural influence as a form of spiritual and social contamination. Understanding how this framework shapes media narratives is the first step toward critical thinking in a landscape built on propaganda.
     </p>
@@ -473,37 +529,45 @@
     <div class="tabs fi" id="tabs">
       <button class="tab-btn active" data-index="0">Social media post</button>
       <button class="tab-btn"        data-index="1">News headline</button>
-      <button class="tab-btn"        data-index="2">Educational content</button>
+      <button class="tab-btn"        data-index="2">Speech of the leader</button>
     </div>
 
-    <div class="panels fi">
-      <div class="panel panel-before">
-        <div class="panel-header">
-          <span class="panel-badge badge-b">Original</span>
-          <span class="panel-lbl">propaganda version</span>
+    <!-- Regular panels (examples 0 & 1) -->
+    <div id="regular-content">
+      <div class="panels fi">
+        <div class="panel panel-before">
+          <div class="panel-header">
+            <span class="panel-badge badge-b">Original</span>
+            <span class="panel-lbl">propaganda version</span>
+          </div>
+          <div class="panel-body" id="before-text"></div>
+          <div class="tags-row"   id="before-tags"></div>
         </div>
-        <div class="panel-body" id="before-text"></div>
-        <div class="tags-row"   id="before-tags"></div>
+        <div class="panel panel-after">
+          <div class="panel-header">
+            <span class="panel-badge badge-a">Reframed</span>
+            <span class="panel-lbl">neutral version</span>
+          </div>
+          <div class="panel-body" id="after-text"></div>
+          <div class="tags-row"   id="after-tags"></div>
+        </div>
       </div>
-      <div class="panel panel-after">
-        <div class="panel-header">
-          <span class="panel-badge badge-a">Reframed</span>
-          <span class="panel-lbl">neutral version</span>
+
+      <div class="tooltip-box fi" id="tooltip-box">
+        <p class="tooltip-empty" id="tooltip-empty">Click a highlighted phrase above to see the technique explained</p>
+        <div class="tooltip-content" id="tooltip-content">
+          <div class="tooltip-icon">&#128269;</div>
+          <div>
+            <div class="tooltip-technique"   id="tooltip-technique"></div>
+            <div class="tooltip-explanation" id="tooltip-explanation"></div>
+          </div>
         </div>
-        <div class="panel-body" id="after-text"></div>
-        <div class="tags-row"   id="after-tags"></div>
       </div>
     </div>
 
-    <div class="tooltip-box fi" id="tooltip-box">
-      <p class="tooltip-empty" id="tooltip-empty">Click a highlighted phrase above to see the technique explained</p>
-      <div class="tooltip-content" id="tooltip-content">
-        <div class="tooltip-icon">&#128269;</div>
-        <div>
-          <div class="tooltip-technique"   id="tooltip-technique"></div>
-          <div class="tooltip-explanation" id="tooltip-explanation"></div>
-        </div>
-      </div>
+    <!-- Speech panels (example 2) -->
+    <div class="speech-container fi" id="speech-content">
+      <!-- built by JS -->
     </div>
 
     <div class="nav-row fi">
@@ -559,7 +623,7 @@
 ═══════════════════════════════════════ -->
 <footer>
   <div class="container">
-    <div class="footer-name">Purity and Protection</div>
+    <div class="footer-name">"Evil" West — threat for Iran, true or false?</div>
     <p class="footer-authors">Kanykei Kendirbaeva, Aleksei Lim, Seinn Mar Lar, Akylai Beishenova</p>
     <p class="footer-inst">American University of Central Asia — Capstone Project 2026</p>
     <p class="footer-disc">This site is an educational tool created to raise awareness of media manipulation techniques.</p>
@@ -572,24 +636,25 @@
 ──────────────────────────────────────── */
 const EXAMPLES = [
   {
+    type: 'before-after',
     before: {
       segs: [
         { t: "Western music and fashion are a " },
         { t: "cultural virus",
           technique: "Disease Metaphor",
-          exp: "Describing culture as a ‘virus’ triggers a biological fear response. It makes ordinary lifestyle choices feel like a physical threat to survival." },
+          exp: "Describing culture as a 'virus' triggers a biological fear response. It makes ordinary lifestyle choices feel like a physical threat to survival." },
         { t: " designed to " },
         { t: "erase your identity",
           technique: "Identity Threat",
-          exp: "Claiming an external force will ‘erase’ your identity creates existential panic. It pressures people to defend themselves against something that isn’t actually attacking them." },
+          exp: "Claiming an external force will 'erase' your identity creates existential panic. It pressures people to defend themselves against something that isn't actually attacking them." },
         { t: ". Youth who follow Western trends are " },
         { t: "infected agents of the enemy",
           technique: "Othering / Dehumanization",
-          exp: "Labeling fellow citizens as ‘infected agents’ separates the audience into us vs them. It makes it socially dangerous to hold certain preferences." },
+          exp: "Labeling fellow citizens as 'infected agents' separates the audience into us vs them. It makes it socially dangerous to hold certain preferences." },
         { t: ". Your faith is under attack — " },
         { t: "protect yourself before it is too late",
           technique: "False Urgency",
-          exp: "‘Before it is too late’ creates artificial time pressure that stops people from thinking critically about the claim." },
+          exp: "'Before it is too late' creates artificial time pressure that stops people from thinking critically about the claim." },
         { t: "." }
       ],
       tags: ["Fear appeal", "Othering", "False dichotomy"]
@@ -600,24 +665,25 @@ const EXAMPLES = [
     }
   },
   {
+    type: 'before-after',
     before: {
       segs: [
         { t: "Protesters who took to the streets this week are " },
         { t: "proven agents of Washington and Tel Aviv",
           technique: "Unverified Accusation as Fact",
-          exp: "Saying protesters are ‘proven agents’ presents an unverified accusation as established truth. This technique skips evidence and goes straight to verdict." },
+          exp: "Saying protesters are 'proven agents' presents an unverified accusation as established truth. This technique skips evidence and goes straight to verdict." },
         { t: ", receiving " },
         { t: "foreign money and instructions",
           technique: "Conspiracy Framing",
-          exp: "Claiming protesters receive ‘foreign money and instructions’ makes any domestic criticism look like a foreign plot. It becomes impossible to disagree without being called a traitor." },
+          exp: "Claiming protesters receive 'foreign money and instructions' makes any domestic criticism look like a foreign plot. It becomes impossible to disagree without being called a traitor." },
         { t: " to destabilize the " },
         { t: "last fortress of true Islam",
           technique: "Religious Fortress Narrative",
-          exp: "Framing the state as ‘the last fortress of true Islam’ makes any political critique feel like an attack on religion itself, not on policy." },
+          exp: "Framing the state as 'the last fortress of true Islam' makes any political critique feel like an attack on religion itself, not on policy." },
         { t: ". " },
         { t: "Real citizens",
           technique: "No True Scotsman",
-          exp: "Defining ‘real citizens’ as those who agree with the government excludes anyone who dissents from the category of legitimate citizen." },
+          exp: "Defining 'real citizens' as those who agree with the government excludes anyone who dissents from the category of legitimate citizen." },
         { t: " reject this foreign interference." }
       ],
       tags: ["Delegitimization", "Conspiracy framing", "Us vs them"]
@@ -628,28 +694,20 @@ const EXAMPLES = [
     }
   },
   {
-    before: {
-      segs: [
-        { t: "Western so-called ‘human rights’ are a " },
-        { t: "colonial trick",
-          technique: "Delegitimizing by Origin",
-          exp: "Calling rights a ‘colonial trick’ dismisses the idea based on where it supposedly comes from rather than engaging with its content. This is the genetic fallacy." },
-        { t: " used to control Muslim nations. Demands for women’s rights and free expression are " },
-        { t: "imported slogans",
-          technique: "Cultural Essentialism",
-          exp: "Claiming certain ideas ‘don’t fit our culture’ treats culture as fixed and homogeneous. It silences people inside the culture who hold different views." },
-        { t: " that do not fit our culture. Those who promote these ideas are " },
-        { t: "unknowingly serving the enemy’s agenda",
-          technique: "Implied Guilt by Association",
-          exp: "Saying advocates ‘unknowingly serve the enemy’ creates a chilling effect. Even sincere, good-faith voices are framed as threats, making self-censorship the safer option." },
-        { t: "." }
-      ],
-      tags: ["Dismissal framing", "Cultural essentialism", "Implicit threat"]
-    },
-    after: {
-      text: "Human rights frameworks were developed through international dialogue involving many cultures and traditions. There are genuine debates about how universal principles apply in different cultural contexts. People within any society can and do hold a wide range of views on these questions.",
-      tags: ["Historical context", "Acknowledges complexity", "No villains"]
-    }
+    type: 'speeches',
+    speeches: [
+      {
+        original: "“We, the followers of Islam—who enjoy large populations, vast lands, and countless natural resources—must build the future with our assets & resources, and stand up and RESIST the aggression, interference and evil of western powers”",
+        revised: "Many Muslims are concerned about foreign interference, but this message turns those concerns into a simple “Islam versus the West” story and calls for resistance against entire societies rather than encouraging thoughtful, issue‑by‑issue engagement and cooperation where possible.",
+        link: "https://www.instagram.com/p/DR0tfU8CPpS/?img_index=3",
+        linkText: "View original source →"
+      },
+      {
+        original: "“The Islamic Republic has shown a Muslim woman observing the Islamic dress code can progress further than others in all areas & be influential both in society & at home. Guided by this view, our women have made great progress in numerous fields since the victory of the Revolution.”",
+        revised: "Many people value Islamic dress and women’s social roles, but this message simplifies a complex reality by suggesting that only one dress code guarantees women’s progress, which is a persuasive, promotional claim rather than a neutral description.",
+        link: null
+      }
+    ]
   }
 ];
 
@@ -660,7 +718,30 @@ let cur = 0;
 
 function render(idx) {
   const ex = EXAMPLES[idx];
+  const regularEl = document.getElementById('regular-content');
+  const speechEl  = document.getElementById('speech-content');
 
+  if (ex.type === 'speeches') {
+    regularEl.style.display = 'none';
+    speechEl.classList.add('active');
+    renderSpeeches(ex.speeches);
+  } else {
+    regularEl.style.display = '';
+    speechEl.classList.remove('active');
+    renderBeforeAfter(ex);
+  }
+
+  /* sync tabs */
+  document.querySelectorAll('.tab-btn').forEach((btn, i) =>
+    btn.classList.toggle('active', i === idx));
+
+  /* counter & nav */
+  document.getElementById('nav-counter').textContent = `${idx + 1} / ${EXAMPLES.length}`;
+  document.getElementById('prev-btn').disabled = idx === 0;
+  document.getElementById('next-btn').disabled = idx === EXAMPLES.length - 1;
+}
+
+function renderBeforeAfter(ex) {
   /* before text */
   const beforeEl = document.getElementById('before-text');
   beforeEl.innerHTML = '';
@@ -682,11 +763,8 @@ function render(idx) {
     }
   });
 
-  /* before tags */
   document.getElementById('before-tags').innerHTML =
     ex.before.tags.map(t => `<span class="tag tag-b">${t}</span>`).join('');
-
-  /* after */
   document.getElementById('after-text').textContent = ex.after.text;
   document.getElementById('after-tags').innerHTML =
     ex.after.tags.map(t => `<span class="tag tag-a">${t}</span>`).join('');
@@ -695,15 +773,61 @@ function render(idx) {
   document.getElementById('tooltip-empty').style.display   = '';
   document.getElementById('tooltip-content').style.display = 'none';
   document.getElementById('tooltip-box').classList.remove('lit');
+}
 
-  /* sync tabs */
-  document.querySelectorAll('.tab-btn').forEach((btn, i) =>
-    btn.classList.toggle('active', i === idx));
+function renderSpeeches(speeches) {
+  const container = document.getElementById('speech-content');
+  container.innerHTML = '';
 
-  /* counter & nav */
-  document.getElementById('nav-counter').textContent = `${idx + 1} / ${EXAMPLES.length}`;
-  document.getElementById('prev-btn').disabled = idx === 0;
-  document.getElementById('next-btn').disabled = idx === EXAMPLES.length - 1;
+  speeches.forEach((sp, i) => {
+    const pair = document.createElement('div');
+    pair.className = 'speech-pair';
+
+    const num = document.createElement('div');
+    num.className = 'speech-num';
+    num.textContent = `Quote ${i + 1}`;
+    pair.appendChild(num);
+
+    const panels = document.createElement('div');
+    panels.className = 'panels';
+
+    /* original panel */
+    const panelB = document.createElement('div');
+    panelB.className = 'panel panel-before';
+    panelB.innerHTML = `
+      <div class="panel-header">
+        <span class="panel-badge badge-b">Original</span>
+        <span class="panel-lbl">leader's statement</span>
+      </div>
+      <div class="panel-body-quote">${escHtml(sp.original)}</div>`;
+    panels.appendChild(panelB);
+
+    /* revised panel */
+    const panelA = document.createElement('div');
+    panelA.className = 'panel panel-after';
+    panelA.innerHTML = `
+      <div class="panel-header">
+        <span class="panel-badge badge-a">Reframed</span>
+        <span class="panel-lbl">critical reading</span>
+      </div>
+      <div class="panel-body">${escHtml(sp.revised)}</div>`;
+    panels.appendChild(panelA);
+
+    pair.appendChild(panels);
+
+    if (sp.link) {
+      const src = document.createElement('div');
+      src.className = 'speech-source';
+      src.innerHTML = `<a href="${sp.link}" target="_blank" rel="noopener noreferrer">${escHtml(sp.linkText)}</a>`;
+      pair.appendChild(src);
+    }
+
+    container.appendChild(pair);
+  });
+}
+
+function escHtml(str) {
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
 function showTip(technique, exp) {
