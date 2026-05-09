@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>"Evil" West — Media Literacy Toolkit</title>
+  <title>Iran: Competing Narratives and Media Perceptions</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
@@ -437,6 +437,176 @@
     @media (max-width: 480px) {
       .nav-btn { padding: 10px 16px; font-size: 13px; }
     }
+
+    /* ════════════════════════════
+       WHO WE ARE
+    ════════════════════════════ */
+    #who-we-are { background: #fff; }
+
+    .who-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+      margin-bottom: 52px;
+    }
+    .who-org-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .who-desc {
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--dark);
+      margin-bottom: 0;
+    }
+    .who-motto {
+      background: var(--dark);
+      border-radius: 14px;
+      padding: 40px 36px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .who-motto::before {
+      content: '\201C';
+      position: absolute;
+      top: -20px;
+      left: 20px;
+      font-family: 'Playfair Display', serif;
+      font-size: 180px;
+      color: var(--accent);
+      opacity: 0.12;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .who-motto-main {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(20px, 2.5vw, 28px);
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 28px;
+      line-height: 1.25;
+      position: relative;
+    }
+    .who-motto-divider {
+      width: 40px;
+      height: 2px;
+      background: var(--accent);
+      opacity: 0.4;
+      margin-bottom: 20px;
+    }
+    .who-motto-line {
+      font-size: 15px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.75;
+      margin-bottom: 10px;
+      padding-left: 14px;
+      border-left: 2px solid rgba(216,90,48,0.3);
+      position: relative;
+    }
+    .who-motto-line:last-child { margin-bottom: 0; }
+
+    .how-we-work {
+      border-top: 1px solid var(--border);
+      padding-top: 44px;
+    }
+    .how-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .how-intro {
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--dark);
+      max-width: 780px;
+      margin-bottom: 36px;
+    }
+    .consultants-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+    .consultant-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .consultant-card:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.09);
+      transform: translateY(-2px);
+    }
+    .consultant-photo {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      background: var(--border);
+    }
+    .consultant-photo-logo {
+      width: 100%;
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f0f4f8;
+      padding: 20px;
+    }
+    .consultant-photo-logo img {
+      max-width: 80%;
+      max-height: 80%;
+      object-fit: contain;
+    }
+    .consultant-info {
+      padding: 16px;
+      flex: 1;
+    }
+    .consultant-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+    .consultant-role {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .consultant-link-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 10px;
+      letter-spacing: 0.03em;
+    }
+
+    @media (max-width: 780px) {
+      .who-header { grid-template-columns: 1fr; gap: 28px; }
+      .consultants-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .consultants-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    }
   </style>
 </head>
 <body>
@@ -447,8 +617,88 @@
 <section id="hero">
   <div class="hero-inner">
     <span class="hero-label fi" style="transition-delay:0s">Educational Project — AUCA 2026</span>
-    <h1 class="hero-title fi" style="transition-delay:0.12s">"Evil" West —<br>threat for Iran<br>true or false?</h1>
+    <h1 class="hero-title fi" style="transition-delay:0.12s">Iran: Competing<br>Narratives and<br>Media Perceptions</h1>
     <p class="hero-sub fi" style="transition-delay:0.24s">A media literacy toolkit for recognizing propaganda techniques</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════
+     WHO WE ARE
+═══════════════════════════════════════ -->
+<section id="who-we-are">
+  <div class="container">
+    <span class="label fi">About</span>
+    <h2 class="section-title fi">Who We Are</h2>
+
+    <div class="who-header">
+      <div class="fi">
+        <div class="who-org-name">Global Media Literacy and Dialogue Institute (GMLDI)</div>
+        <p class="who-desc">We are an international network of scholars, religious leaders, political researchers, and peace advocates dedicated to promoting media literacy, informed dialogue, and intellectual independence. Our mission is to empower young people — particularly across Asia and the Middle East — to thoughtfully evaluate political narratives, media messaging, and the intersection of religion and public discourse. Through education, research, and open discussion, we encourage evidence-based analysis, constructive engagement, and a deeper understanding of diverse global perspectives.</p>
+      </div>
+      <div class="who-motto fi" style="transition-delay:0.1s">
+        <div class="who-motto-main">Think!<br>Question!<br>Understand!</div>
+        <div class="who-motto-divider"></div>
+        <p class="who-motto-line">No faith forbids compassion, wisdom, or critical thinking.</p>
+        <p class="who-motto-line">Religions may differ in beliefs and traditions, but love, kindness, and humanity remain our shared values.</p>
+      </div>
+    </div>
+
+    <div class="how-we-work fi">
+      <div class="how-label">How We Work</div>
+      <p class="how-intro">To ensure the credibility of our projects, our organization works in consultation with respected religious leaders and interfaith dialogue experts. Their guidance helps us better understand local social and religious contexts and develop media literacy tools grounded in ethical communication, critical thinking, and responsible digital engagement.</p>
+
+      <div class="consultants-grid">
+
+        <!-- Imam Muhammad Ashafa -->
+        <a class="consultant-card fi" style="transition-delay:0.05s" href="https://tanenbaum.org/about-us/what-we-do/peacebuilding/meet-the-peacemakers/imam-muhammad-ashafa-pastor-james-wuye/" target="_blank" rel="noopener">
+          <img class="consultant-photo" src="./ashafa.jpg" alt="Imam Muhammad Ashafa" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="consultant-photo-logo" style="display:none; font-family:'Playfair Display',serif; font-size:36px; color:var(--accent); font-weight:700;">MA</div>
+          <div class="consultant-info">
+            <div class="consultant-name">Imam Muhammad Ashafa</div>
+            <div class="consultant-role">Peace advocate &amp; interfaith dialogue leader</div>
+            <span class="consultant-link-tag">View profile ↗</span>
+          </div>
+        </a>
+
+        <!-- Sheikh Abdulhakim Abdulkarim -->
+        <div class="consultant-card fi" style="transition-delay:0.1s; cursor:default;">
+          <div class="consultant-photo-logo" style="display:flex;">
+            <span style="font-family:'Playfair Display',serif; font-size:36px; color:var(--accent); font-weight:700;">AA</span>
+          </div>
+          <div class="consultant-info">
+            <div class="consultant-name">Sheikh Abdulhakim Abdulkarim</div>
+            <div class="consultant-role">Religious leader &amp; social context adviser</div>
+          </div>
+        </div>
+
+        <!-- KAICIID -->
+        <a class="consultant-card fi" style="transition-delay:0.15s" href="https://www.kaiciid.org/resources/publications/media-wise-empowering-responsible-religious-leadership-digital-age-pilot" target="_blank" rel="noopener">
+          <div class="consultant-photo-logo" style="display:flex; background:#f0f4f9; padding:24px;">
+            <img src="./kaiciid-logo.svg" alt="KAICIID" style="max-width:85%; object-fit:contain;">
+          </div>
+          <div class="consultant-info">
+            <div class="consultant-name">KAICIID</div>
+            <div class="consultant-role">King Abdullah International Centre for Interreligious Dialogue</div>
+            <span class="consultant-link-tag">Media-Wise publication ↗</span>
+          </div>
+        </a>
+
+        <!-- UNESCO -->
+        <a class="consultant-card fi" style="transition-delay:0.2s" href="https://www.unesco.org/en/articles/media-and-information-literacy-training-religious-leaders-and-dialogue-practitioners" target="_blank" rel="noopener">
+          <div class="consultant-photo-logo" style="display:flex; background:#eef2f8; padding:28px;">
+            <img src="./unesco-logo.svg" alt="UNESCO" style="max-width:85%; object-fit:contain;">
+          </div>
+          <div class="consultant-info">
+            <div class="consultant-name">UNESCO</div>
+            <div class="consultant-role">UN Educational, Scientific and Cultural Organization</div>
+            <span class="consultant-link-tag">MIL for religious leaders ↗</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
   </div>
 </section>
 
@@ -623,7 +873,7 @@
 ═══════════════════════════════════════ -->
 <footer>
   <div class="container">
-    <div class="footer-name">"Evil" West — threat for Iran, true or false?</div>
+    <div class="footer-name">Iran: Competing Narratives and Media Perceptions</div>
     <p class="footer-authors">Kanykei Kendirbaeva, Aleksei Lim, Seinn Mar Lar, Akylai Beishenova</p>
     <p class="footer-inst">American University of Central Asia — Capstone Project 2026</p>
     <p class="footer-disc">This site is an educational tool created to raise awareness of media manipulation techniques.</p>
